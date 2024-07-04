@@ -1,0 +1,88 @@
+:root {
+    --width: 720px;
+    --font-scale: .9em;
+    --background-color: #fff;
+    --heading-color: #232333;
+    --text-color: #232333;
+    --link-color: #232333;
+    --visited-color: #232333;
+    --main-color: #ff0000;
+    --code-background-color: #f2f2f2;
+    --code-color: #222;
+    --blockquote-color: #222;
+}
+
+body {
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 1rem;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+nav {
+    border-bottom: 3px dotted #232333;
+}
+
+nav a {
+    margin-right: 8px;
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 3px solid #ff0000;
+}
+
+a:hover {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+}
+
+blockquote {
+    margin: 0;
+}
+
+.poem {
+    display: flex;
+    flex-direction: column;
+    font-family: unset;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+.poem p,
+.writing p {
+    margin: 0;
+    padding: 0;
+}
+
+.poem p:not(:last-child) {
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.writing p:not(:last-child) {
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.writing {
+    display: flex;
+    flex-direction: column;
+    font-family: unset;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    padding: 1rem;
+    white-space: wrap;
+    word-break: break-word;
+}
+
+.writing p {
+    text-indent: 1rem each-line;
+}

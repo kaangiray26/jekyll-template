@@ -1,0 +1,14 @@
+---
+layout: default
+title: Homepage
+---
+<h2>Latest</h2>
+<ul>
+    {% for post in site.posts limit:5 %}
+    <li>
+        <a href="{{ post.url | relative_url}}">{{ post.title }}</a>
+        -
+        <time>{{ post.date | date: "%B %d, %Y" }}</time>
+    </li>
+    {% endfor %}
+</ul>
