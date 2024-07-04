@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Get version number ie. 1.0.8
+version=$(curl -s https://api.github.com/repos/kaangiray26/jekyll-template/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -c 2-)
+
+wget https://github.com/kaangiray26/jekyll-template/archive/refs/tags/v$version.zip
+
+unzip v$version.zip
+
+rm v$version.zip
+
+cp -a jekyll-template-$version/. ./
+
+rm -rf jekyll-template-$version
+
+rm install
+
+## Check if docker is installed
+if ! [ -x "$(command -v docker)" ]; then
+  echo 'Error: docker is not installed.' >&2
+  exit 1
+fi
+
+docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll jekyll serve --livereload --watch
