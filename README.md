@@ -7,12 +7,8 @@ Use the following one-liner to clone the repository and initialize the jekyll si
 sh -c "$(curl -fsSL https://kaangiray26.github.io/jekyll-template/install)"
 ```
 
-## Running locally
+## Usage
+Use the `jekyll` bash script to run commands with the jekyll docker container. 
 ```
-docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 -it jekyll/jekyll jekyll serve --livereload --watch
-```
-
-## Building with Docker
-```
-docker run --rm --volume="$PWD:/srv/jekyll" -it jekyll/jekyll jekyll build -d docs
+./jekyll {build|serve|deploy}
 ```
